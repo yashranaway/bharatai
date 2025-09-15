@@ -1,6 +1,7 @@
 # Mini Bharat AI Store
 
 An Integrated Retail Intelligence System that connects Kirana stores, wholesalers, and logistics providers using AI and WhatsApp-like interfaces.
+# Video Demo - https://drive.google.com/file/d/1eCX6ZNYm6yAG4zWa83MaFXX8ElARqzm1/view?usp=sharing
 
 ## Architecture
 

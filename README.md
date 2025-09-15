@@ -33,6 +33,26 @@ docker-compose up --build
 # Backend API: http://localhost:3001
 ```
 
+### Environment Variables
+
+```bash
+cp .env.example .env
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
+
+Required variables:
+
+- Backend (`backend/.env`):
+  - `PORT`
+  - `NODE_ENV`
+  - `DATABASE_URL` (PostgreSQL connection string)
+  - `JWT_SECRET`
+- Frontend (`frontend/.env`):
+  - `BACKEND_URL` (e.g., http://localhost:3001/api or http://backend:3001/api when using Docker)
+- Root (optional, for monitoring):
+  - `BACKEND_URL`, `FRONTEND_URL`
+
 ### Local Development
 ```bash
 # Start backend

@@ -28,8 +28,8 @@ RESTful API for the Mini Bharat AI Store, an Integrated Retail Intelligence Syst
    ```env
    PORT=3001
    NODE_ENV=development
-   DATABASE_URL=postgresql://neondb_owner:npg_mc3zRWHGX2ph@ep-sparkling-glitter-ade65204-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-   JWT_SECRET=your_jwt_secret_key_here
+   DATABASE_URL=postgresql://<username>:<password>@<host>/<database>?sslmode=require
+   JWT_SECRET=<your_jwt_secret_key>
    ```
 
 ## Usage
@@ -224,13 +224,13 @@ Create a `.env` file in the backend directory with the following variables:
 ```env
 PORT=3001
 NODE_ENV=development
-DATABASE_URL=postgresql://neondb_owner:npg_mc3zRWHGX2ph@ep-sparkling-glitter-ade65204-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-JWT_SECRET=mini_bharat_ai_store_secret_key
+DATABASE_URL=postgresql://<username>:<password>@<host>/<database>?sslmode=require
+JWT_SECRET=<your_jwt_secret_key>
 ```
 
 ## Requirements
 
 - Node.js 14+
 - npm 6+
-- PostgreSQL (Neon DB)
+- PostgreSQL (e.g., Neon or any managed Postgres)
 

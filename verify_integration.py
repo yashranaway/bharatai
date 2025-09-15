@@ -13,7 +13,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 def verify_backend_api():
     """Verify backend API is running and accessible"""
     try:
-        response = requests.get("http://localhost:3001/api/health")
+        backend_base_url = os.getenv("BACKEND_URL", "http://localhost:3001/api")
+        response = requests.get(f"{backend_base_url}/health")
         if response.status_code == 200 and response.json().get("status") == "OK":
             print("Backend API: RUNNING")
             return True
@@ -27,7 +28,8 @@ def verify_backend_api():
 def verify_database_connection():
     """Verify database connection through API"""
     try:
-        response = requests.get("http://localhost:3001/api/inventory/products")
+        backend_base_url = os.getenv("BACKEND_URL", "http://localhost:3001/api")
+        response = requests.get(f"{backend_base_url}/inventory/products")
         if response.status_code == 200:
             data = response.json()
             if data.get("success") and "data" in data:

@@ -15,7 +15,8 @@ def test_backend_api():
     """Test backend API connectivity"""
     try:
         print("Testing backend API connectivity...")
-        response = requests.get("http://localhost:3001/api/health", timeout=5)
+        backend_base_url = os.getenv("BACKEND_URL", "http://localhost:3001/api")
+        response = requests.get(f"{backend_base_url}/health", timeout=5)
         if response.status_code == 200 and response.json().get("status") == "OK":
             print("✅ Backend API: RUNNING")
             return True
@@ -30,7 +31,8 @@ def test_database_connection():
     """Test database connection through API"""
     try:
         print("Testing database connection...")
-        response = requests.get("http://localhost:3001/api/inventory/products", timeout=5)
+        backend_base_url = os.getenv("BACKEND_URL", "http://localhost:3001/api")
+        response = requests.get(f"{backend_base_url}/inventory/products", timeout=5)
         if response.status_code == 200:
             data = response.json()
             if data.get("success") and "data" in data:
